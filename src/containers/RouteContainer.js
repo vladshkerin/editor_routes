@@ -4,7 +4,26 @@ import PointContainer from './PointContainer';
 
 class RouteContainer extends Component {
   state = {
-    newPoint: '',
+    text: '',
+  };
+
+  onChangeHandler = (evt) => {
+    const { value } = evt.currentTarget;
+    this.setState({ text: value });
+  };
+
+  onKeyDownHandler = (evt) => {
+    if (evt.key === 'Enter') {
+      evt.preventDefault();
+
+      const { text } = this.state;
+      this.props.onAddPoints({
+        id: +new Date(),
+        text: text,
+      });
+
+      return false;
+    }
   };
 
   renderPoints = () => {
@@ -13,7 +32,7 @@ class RouteContainer extends Component {
 
     if (data.length) {
       pointsTemplate = data.map((item) => {
-        return <PointContainer key={item} number={item}/>;
+        return <PointContainer key={item.id} data={item}/>;
       });
     } else {
       pointsTemplate = <p>Нет точек маршрута</p>;
@@ -22,24 +41,19 @@ class RouteContainer extends Component {
     return pointsTemplate;
   };
 
-  handlerChange = (e) => {
-    const { id, value } = e.currentTarget;
-    this.setState({ [id]: value });
-  };
-
   render() {
-    const { newPoint } = this.state;
+    const { text } = this.state;
 
     return (
       <section className="form-wrapper">
         <form className="form">
-          <input id="newPoint"
-                 className="form__input"
-                 onChange={this.handlerChange}
+          <input className="form__input"
+                 onChange={this.onChangeHandler}
+                 onKeyDown={this.onKeyDownHandler}
                  type="text"
                  name="form__input"
                  placeholder="Новая точка маршрута"
-                 value={newPoint}/>
+                 value={text}/>
           {this.renderPoints()}
         </form>
       </section>
@@ -49,6 +63,7 @@ class RouteContainer extends Component {
 
 RouteContainer.propTypes = {
   data: PropTypes.array.isRequired,
+  onAddPoints: PropTypes.func.isRequired,
 };
 
 export default RouteContainer;

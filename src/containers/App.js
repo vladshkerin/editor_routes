@@ -6,7 +6,12 @@ import './App.css';
 
 class App extends Component {
   state = {
-    points: [1, 2, 3],
+    points: [],
+  };
+
+  onAddPointsHandler = (data) => {
+    const nextPoint = [...this.state.points, data];
+    this.setState({points: nextPoint});
   };
 
   render() {
@@ -14,7 +19,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <RouteContainer data={points}/>
+        <RouteContainer onAddPoints={this.onAddPointsHandler} data={points}/>
         <MapContainer/>
       </div>
     );

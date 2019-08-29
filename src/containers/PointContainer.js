@@ -3,19 +3,22 @@ import PropTypes from 'prop-types';
 
 class PointContainer extends Component {
   render() {
-    const { number } = this.props;
+    const { text } = this.props.data;
 
     return (
       <div className="point">
-        <p className={'point__name-' + number}>Точка маршрута {number}</p>
-        <button className={'point__btn-' + number}>x</button>
+        <p className="point__name">{text}</p>
+        <button className="point__btn">x</button>
       </div>
     );
   }
 }
 
 PointContainer.propTypes = {
-  number: PropTypes.number,
+  data: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    text: PropTypes.string.isRequired,
+  }),
 };
 
 export default PointContainer;
