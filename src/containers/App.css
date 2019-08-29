@@ -29,15 +29,24 @@ body {
     border-radius: 5px;
 }
 
+.form__input::placeholder {
+    padding-left: 5px;
+
+    font-size: 12px;
+}
+
 .point {
     display: flex;
     justify-content: space-between;
 
-    margin-bottom: 4px;
+    margin-bottom: 2px;
+    padding: 2px;
+
+    cursor: pointer;
 }
 
-.point__delete {
-
+.point:hover {
+    box-shadow: 0 0 2px #cccccc;
 }
 
 .map-wrapper {
@@ -47,10 +56,4 @@ body {
 
     border: 2px solid #cccccc;
     border-radius: 5px;
-}
-
-::placeholder {
-    padding-left: 5px;
-
-    font-size: 12px;
 }
