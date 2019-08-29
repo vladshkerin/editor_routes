@@ -1,34 +1,34 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import PointContainer from './PointContainer'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import PointContainer from './PointContainer';
 
 class RouteContainer extends Component {
   state = {
     newPoint: '',
-  }
+  };
 
   renderPoints = () => {
-    const { data } = this.props
-    let pointsTemplate = null
+    const { data } = this.props;
+    let pointsTemplate = null;
 
     if (data.length) {
       pointsTemplate = data.map((item) => {
-        return <PointContainer key={item} number={item}/>
-      })
+        return <PointContainer key={item} number={item}/>;
+      });
     } else {
-      pointsTemplate = <p>Нет точек</p>
+      pointsTemplate = <p>Нет точек маршрута</p>;
     }
 
-    return pointsTemplate
-  }
+    return pointsTemplate;
+  };
 
   handlerChange = (e) => {
-    const { id, value } = e.currentTarget
-    this.setState({ [id]: value })
-  }
+    const { id, value } = e.currentTarget;
+    this.setState({ [id]: value });
+  };
 
   render() {
-    const { newPoint } = this.state
+    const { newPoint } = this.state;
 
     return (
       <section className="form-wrapper">
@@ -43,12 +43,12 @@ class RouteContainer extends Component {
           {this.renderPoints()}
         </form>
       </section>
-    )
+    );
   }
 }
 
 RouteContainer.propTypes = {
   data: PropTypes.array.isRequired,
-}
+};
 
-export default RouteContainer
+export default RouteContainer;
