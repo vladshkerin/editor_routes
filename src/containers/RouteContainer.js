@@ -17,25 +17,34 @@ class RouteContainer extends Component {
       evt.preventDefault();
 
       const { text } = this.state;
-      this.props.onAddPoints({
-        id: +new Date(),
-        text: text,
-      });
+      if (text.trim()) {
+        this.props.onAddPoints({
+          id: +new Date(),
+          text: text,
+        });
+
+        this.setState({ text: '' });
+      }
 
       return false;
     }
   };
 
   renderPoints = () => {
-    const { data } = this.props;
+    const { onDeletePoints, data } = this.props;
     let pointsTemplate = null;
 
     if (data.length) {
       pointsTemplate = data.map((item) => {
-        return <PointContainer key={item.id} data={item}/>;
+        return (
+          <PointContainer
+            key={item.id}
+            data={item}
+            onDeletePoints={onDeletePoints}/>
+        );
       });
     } else {
-      pointsTemplate = <p>Нет точек маршрута</p>;
+      pointsTemplate = <p className="point">Нет точек маршрута</p>;
     }
 
     return pointsTemplate;
@@ -64,6 +73,7 @@ class RouteContainer extends Component {
 RouteContainer.propTypes = {
   data: PropTypes.array.isRequired,
   onAddPoints: PropTypes.func.isRequired,
+  onDeletePoints: PropTypes.func.isRequired,
 };
 
 export default RouteContainer;

@@ -11,7 +11,14 @@ class App extends Component {
 
   onAddPointsHandler = (data) => {
     const nextPoint = [...this.state.points, data];
-    this.setState({points: nextPoint});
+    this.setState({ points: nextPoint });
+  };
+
+  onDeletePointsHandler = (id) => {
+    const nextPoint = [...this.state.points].filter((item) => {
+      return item.id !== id;
+    });
+    this.setState({ points: nextPoint });
   };
 
   render() {
@@ -19,7 +26,10 @@ class App extends Component {
 
     return (
       <div className="App">
-        <RouteContainer onAddPoints={this.onAddPointsHandler} data={points}/>
+        <RouteContainer
+          data={points}
+          onAddPoints={this.onAddPointsHandler}
+          onDeletePoints={this.onDeletePointsHandler}/>
         <MapContainer/>
       </div>
     );
