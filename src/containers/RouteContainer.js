@@ -52,7 +52,7 @@ class RouteContainer extends Component {
                  onKeyDown={this.onKeyDownHandler}
                  type="text"
                  name="form__input"
-                 placeholder="Новая точка маршрута"
+                 placeholder="Введите наименование точки"
                  value={text}/>
           {this.renderPoints()}
         </form>
