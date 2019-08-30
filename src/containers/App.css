@@ -51,6 +51,7 @@ body {
 }
 
 .map-wrapper {
+    position: relative;
     width: 360px;
     height: 360px;
     margin-left: 10px;
@@ -62,4 +63,12 @@ body {
 .map {
     width: 360px;
     height: 360px;
+}
+
+.map-point {
+    position: absolute;
+    top: 180px;
+    left: 180px;
+
+    cursor: pointer;
 }

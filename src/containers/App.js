@@ -30,7 +30,8 @@ class App extends Component {
           data={points}
           onAddPoints={this.onAddPointsHandler}
           onDeletePoints={this.onDeletePointsHandler}/>
-        <MapContainer/>
+        <MapContainer
+          data={points}/>
       </div>
     );
   }
