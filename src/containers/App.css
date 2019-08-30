@@ -58,3 +58,8 @@ body {
     border: 2px solid #cccccc;
     border-radius: 5px;
 }
+
+.map {
+    width: 360px;
+    height: 360px;
+}

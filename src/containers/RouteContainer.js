@@ -31,7 +31,7 @@ class RouteContainer extends Component {
   };
 
   renderPoints = () => {
-    const { onDeletePoints, data } = this.props;
+    const { data, onDeletePoints } = this.props;
     let pointsTemplate = null;
 
     if (data.length) {
