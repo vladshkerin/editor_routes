@@ -4,6 +4,11 @@ import { YMaps, Map } from 'react-yandex-maps';
 import MapPointContainer from './MapPointContainer';
 
 class MapContainer extends Component {
+  state = {
+    center: [55.75, 37.61],
+    zoom: 9,
+  };
+
   renderMapPoints = () => {
     const { data } = this.props;
     let mapPointsTemplate = null;
@@ -24,7 +29,7 @@ class MapContainer extends Component {
       <section className="map-wrapper">
         <YMaps>
           <Map className="map"
-               defaultState={{ center: [55.75, 37.61], zoom: 9 }}>
+               defaultState={this.state}>
           </Map>
           {this.renderMapPoints()}
         </YMaps>
