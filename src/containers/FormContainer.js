@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import PointContainer from './PointContainer';
+import PointFormContainer from './PointFormContainer';
 
-class RouteContainer extends Component {
+class FormContainer extends Component {
   state = {
     text: '',
   };
@@ -37,7 +37,7 @@ class RouteContainer extends Component {
     if (data.length) {
       pointsTemplate = data.map((item) => {
         return (
-          <PointContainer
+          <PointFormContainer
             key={item.id}
             data={item}
             onDeletePoints={onDeletePoints}/>
@@ -70,10 +70,10 @@ class RouteContainer extends Component {
   }
 }
 
-RouteContainer.propTypes = {
+FormContainer.propTypes = {
   data: PropTypes.array.isRequired,
   onAddPoints: PropTypes.func.isRequired,
   onDeletePoints: PropTypes.func.isRequired,
 };
 
-export default RouteContainer;
+export default FormContainer;

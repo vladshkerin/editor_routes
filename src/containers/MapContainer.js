@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { YMaps, Map } from 'react-yandex-maps';
-import MapPointContainer from './MapPointContainer';
+import PointMapContainer from './PointMapContainer';
 
 class MapContainer extends Component {
   state = {
@@ -11,17 +11,17 @@ class MapContainer extends Component {
 
   renderMapPoints = () => {
     const { data } = this.props;
-    let mapPointsTemplate = null;
+    let pointsTemplate = null;
 
     if (data.length) {
-      mapPointsTemplate = data.map((item) => {
+      pointsTemplate = data.map((item) => {
         return (
-          <MapPointContainer/>
+          <PointMapContainer key={item.id}/>
         );
       });
     }
 
-    return mapPointsTemplate;
+    return pointsTemplate;
   };
 
   render() {

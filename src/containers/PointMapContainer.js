@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class MapPointContainer extends Component {
+class PointMapContainer extends Component {
   render() {
     return (
       <div className="map-point">o</div>
@@ -8,4 +8,4 @@ class MapPointContainer extends Component {
   }
 }
 
-export default MapPointContainer;
+export default PointMapContainer;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class PointContainer extends Component {
+class PointFormContainer extends Component {
   onClickHandler = (evt) => {
     evt.preventDefault();
 
@@ -21,7 +21,7 @@ class PointContainer extends Component {
   }
 }
 
-PointContainer.propTypes = {
+PointFormContainer.propTypes = {
   data: PropTypes.shape({
     id: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired,
@@ -29,4 +29,4 @@ PointContainer.propTypes = {
   onDeletePoints: PropTypes.func.isRequired,
 };
 
-export default PointContainer;
+export default PointFormContainer;
