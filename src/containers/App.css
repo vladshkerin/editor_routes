@@ -8,7 +8,7 @@ body {
     justify-content: center;
     align-content: center;
 
-    width: 570px;
+    width: 590px;
     margin: 20px auto 20px;
     padding: 10px;
 
@@ -17,7 +17,11 @@ body {
 }
 
 .form-wrapper {
-    width: 200px;
+    width: 215px;
+}
+
+.form {
+    width: 215px;
 }
 
 .form__input {
@@ -47,7 +51,8 @@ body {
 }
 
 .point:hover {
-    box-shadow: 0 0 2px #cccccc;
+    box-shadow: 0 0 3px #cccccc;
+    border-radius: 3px;
 }
 
 .map-wrapper {

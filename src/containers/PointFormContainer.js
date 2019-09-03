@@ -23,7 +23,7 @@ class PointFormContainer extends Component {
 
 PointFormContainer.propTypes = {
   data: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
   }),
   onDeletePoints: PropTypes.func.isRequired,

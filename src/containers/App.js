@@ -22,6 +22,10 @@ class App extends Component {
     this.setState({ points: nextPoint });
   };
 
+  onChangePointsFromHandler = points => {
+    this.setState({ points });
+  };
+
   render() {
     const { points } = this.state;
 
@@ -30,7 +34,8 @@ class App extends Component {
         <FormContainer
           data={points}
           onAddPoints={this.onAddPointsFormHandler}
-          onDeletePoints={this.onDeletePointsFormHandler}/>
+          onDeletePoints={this.onDeletePointsFormHandler}
+          onChangePoints={this.onChangePointsFromHandler}/>
         <MapContainer
           data={points}/>
       </div>
