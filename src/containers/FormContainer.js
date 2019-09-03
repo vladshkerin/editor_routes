@@ -4,26 +4,26 @@ import PointFormContainer from './PointFormContainer';
 
 class FormContainer extends Component {
   state = {
-    text: '',
+    content: '',
   };
 
   onChangeHandler = (evt) => {
     const { value } = evt.currentTarget;
-    this.setState({ text: value });
+    this.setState({ content: value });
   };
 
   onKeyDownHandler = (evt) => {
     if (evt.key === 'Enter') {
       evt.preventDefault();
 
-      const { text } = this.state;
-      if (text.trim()) {
+      const { content } = this.state;
+      if (content.trim()) {
         this.props.onAddPoints({
           id: +new Date(),
-          text: text,
+          content: content,
         });
 
-        this.setState({ text: '' });
+        this.setState({ content: '' });
       }
 
       return false;
@@ -51,7 +51,7 @@ class FormContainer extends Component {
   };
 
   render() {
-    const { text } = this.state;
+    const { content } = this.state;
 
     return (
       <section className="form-wrapper">
@@ -62,7 +62,7 @@ class FormContainer extends Component {
                  type="text"
                  name="form__input"
                  placeholder="Введите наименование точки"
-                 value={text}/>
+                 value={content}/>
           {this.renderPoints()}
         </form>
       </section>

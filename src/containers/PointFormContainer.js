@@ -10,11 +10,11 @@ class PointFormContainer extends Component {
   };
 
   render() {
-    const { text } = this.props.data;
+    const { content } = this.props.data;
 
     return (
       <div className="point">
-        <p className="point__name">{text}</p>
+        <p className="point__name">{content}</p>
         <button className="point__btn" onClick={this.onClickHandler}>x</button>
       </div>
     );
@@ -24,7 +24,7 @@ class PointFormContainer extends Component {
 PointFormContainer.propTypes = {
   data: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
   }),
   onDeletePoints: PropTypes.func.isRequired,
 };
