@@ -1,13 +1,13 @@
 {
   "name": "editor_routes",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-beautiful-dnd": "^11.0.5",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1",
+    "react-scripts": "^3.1.1",
     "react-yandex-maps": "^4.0.1"
   },
   "scripts": {
@@ -18,7 +18,7 @@
     "eslint": "node_modules/.bin/eslint src/"
   },
   "devDependencies": {
-    "eslint-config-prettier": "^6.1.0",
+    "eslint-config-prettier": "^6.2.0",
     "eslint-plugin-prettier": "^3.1.0",
     "prettier": "^1.18.2"
   },
