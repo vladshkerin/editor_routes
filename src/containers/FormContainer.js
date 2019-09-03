@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import PointFormContainer from './PointFormContainer';
-import { getId } from '../utils/Utils';
+import { getId, getRandomInt } from '../utils/Utils';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 const grid = 1;
@@ -70,6 +70,8 @@ class FormContainer extends Component {
         this.props.onAddPoints({
           id: getId(),
           content: content,
+          coordinateX: getRandomInt(0, 350),
+          coordinateY: getRandomInt(0, 350),
         });
 
         this.setState({ content: '' });

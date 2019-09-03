@@ -72,8 +72,13 @@ body {
 
 .map-point {
     position: absolute;
-    top: 180px;
-    left: 180px;
+    z-index: 999;
 
     cursor: pointer;
+}
+
+.map-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
