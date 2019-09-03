@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import FormContainer from './FormContainer';
 import MapContainer from './MapContainer';
+import { getPoints } from '../utils/Utils';
 
 import './App.css';
 
 class App extends Component {
   state = {
-    points: [],
+    points: getPoints(10),
   };
 
-  onAddPointsFormHandler = (data) => {
+  onAddPointsFormHandler = data => {
     const nextPoint = [...this.state.points, data];
     this.setState({ points: nextPoint });
   };
 
-  onDeletePointsFormHandler = (id) => {
+  onDeletePointsFormHandler = id => {
     const nextPoint = [...this.state.points].filter((item) => {
       return item.id !== id;
     });

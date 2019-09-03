@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class PointFormContainer extends Component {
-  onClickHandler = (evt) => {
+  onClickHandler = evt => {
     evt.preventDefault();
 
     const { id } = this.props.data;

@@ -14,7 +14,7 @@ class MapContainer extends Component {
     let pointsTemplate = null;
 
     if (data.length) {
-      pointsTemplate = data.map((item) => {
+      pointsTemplate = data.map(item => {
         return (
           <PointMapContainer key={item.id}/>
         );

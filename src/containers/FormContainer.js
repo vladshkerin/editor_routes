@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import PointFormContainer from './PointFormContainer';
+import { getId } from '../utils/Utils';
 
 class FormContainer extends Component {
   state = {
     content: '',
   };
 
-  onChangeHandler = (evt) => {
+  onChangeHandler = evt => {
     const { value } = evt.currentTarget;
     this.setState({ content: value });
   };
 
-  onKeyDownHandler = (evt) => {
+  onKeyDownHandler = evt => {
     if (evt.key === 'Enter') {
       evt.preventDefault();
 
       const { content } = this.state;
       if (content.trim()) {
         this.props.onAddPoints({
-          id: +new Date(),
+          id: getId(),
           content: content,
         });
 
@@ -35,7 +36,7 @@ class FormContainer extends Component {
     let pointsTemplate = null;
 
     if (data.length) {
-      pointsTemplate = data.map((item) => {
+      pointsTemplate = data.map(item => {
         return (
           <PointFormContainer
             key={item.id}
