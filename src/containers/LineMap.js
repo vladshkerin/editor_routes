@@ -14,12 +14,13 @@ class LineMap extends Component {
     const canvas = this.refs.canvas;
     const ctx = canvas.getContext('2d');
     const crd = this.props.data;
+    const offset = 10;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
-    ctx.moveTo(crd[0].y + 5, crd[0].x + 10);
+    ctx.moveTo(crd[0].y + offset, crd[0].x + offset);
     for (let i = 1; i < crd.length; i++) {
-      ctx.lineTo(crd[i].y + 5, crd[i].x + 10);
+      ctx.lineTo(crd[i].y + offset, crd[i].x + offset);
     }
     ctx.lineWidth = 3;
     ctx.strokeStyle = 'gray';
