@@ -6,21 +6,29 @@ class LineMap extends Component {
     this.updateCanvas();
   }
 
-  updateCanvas() {
-    const crd = this.props.data;
-    const ctx = this.refs.canvas.getContext('2d');
+  componentDidUpdate() {
+    this.updateCanvas();
+  }
 
+  updateCanvas = () => {
+    const canvas = this.refs.canvas;
+    const ctx = canvas.getContext('2d');
+    const crd = this.props.data;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
     ctx.moveTo(crd[0].y + 5, crd[0].x + 10);
     for (let i = 1; i < crd.length; i++) {
       ctx.lineTo(crd[i].y + 5, crd[i].x + 10);
     }
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = 'gray';
     ctx.stroke();
-  }
+  };
 
   render() {
     return (
-      <canvas className="map-canvas" ref="canvas" width={360} height={360}/>
+      <canvas className="map-canvas" ref="canvas" width={460} height={460}/>
     );
   }
 }

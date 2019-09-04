@@ -10,7 +10,7 @@ class MapContainer extends Component {
     zoom: 9,
   };
 
-  renderMapPoints = () => {
+  renderPointsMap = () => {
     const { data } = this.props;
     let pointsTemplate = null;
 
@@ -26,19 +26,30 @@ class MapContainer extends Component {
     return pointsTemplate;
   };
 
-  render() {
-    const coordinates = this.props.data.map(item => {
-      return { x: item.coordinateX, y: item.coordinateY };
-    });
+  renderLinesMap = () => {
+    const { data } = this.props;
 
+    if (data.length) {
+      const coordinates = data.map(item => ({
+        x: item.coordinateX,
+        y: item.coordinateY,
+      }));
+
+      return <LineMap className="map-line" data={coordinates}/>;
+    }
+
+    return null;
+  };
+
+  render() {
     return (
       <section className="map-wrapper">
         <YMaps>
           <Map className="map"
                defaultState={this.state}>
           </Map>
-          <LineMap className="map-line" data={coordinates}/>
-          {this.renderMapPoints()}
+          {this.renderPointsMap()}
+          {this.renderLinesMap()}
         </YMaps>
       </section>
     );

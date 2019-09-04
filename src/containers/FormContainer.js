@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import PointFormContainer from './PointFormContainer';
 import { getId, getRandomInt } from '../utils/Utils';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 const grid = 1;
 

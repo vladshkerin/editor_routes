@@ -8,7 +8,7 @@ body {
     justify-content: center;
     align-content: center;
 
-    width: 590px;
+    width: 690px;
     margin: 20px auto 20px;
     padding: 10px;
 
@@ -57,8 +57,8 @@ body {
 
 .map-wrapper {
     position: relative;
-    width: 360px;
-    height: 360px;
+    width: 460px;
+    height: 460px;
     margin-left: 10px;
 
     border: 2px solid #cccccc;
@@ -66,13 +66,13 @@ body {
 }
 
 .map {
-    width: 360px;
-    height: 360px;
+    width: 460px;
+    height: 460px;
+    z-index: 999;
 }
 
 .map-point {
     position: absolute;
-    z-index: 999;
 
     cursor: pointer;
 }
