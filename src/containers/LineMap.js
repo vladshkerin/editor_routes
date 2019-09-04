@@ -14,7 +14,7 @@ class LineMap extends Component {
     const canvas = this.refs.canvas;
     const ctx = canvas.getContext('2d');
     const crd = this.props.data;
-    const offset = 10;
+    const offset = 8;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();

@@ -72,12 +72,13 @@ body {
 
 .map-point {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     z-index: 999;
 
     text-align: center;
     border-radius: 15px;
+    background: url(//yastatic.net/s3/front-maps-static/front-maps/_/220b7368693f1dd6ea9cc18efe67c389.svg) no-repeat;
 
     cursor: pointer;
 }

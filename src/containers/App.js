@@ -7,7 +7,7 @@ import './App.css';
 
 class App extends Component {
   state = {
-    points: getPoints(3),
+    points: getPoints(5),
   };
 
   onAddPointsFormHandler = data => {

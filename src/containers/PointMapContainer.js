@@ -12,7 +12,7 @@ class PointMapContainer extends Component {
 
     return (
       <div className="map-point"
-           style={getPointStyle(x, y)}>o</div>
+           style={getPointStyle(x, y)}/>
     );
   }
 }
