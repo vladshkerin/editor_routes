@@ -68,11 +68,11 @@ body {
 .map {
     width: 460px;
     height: 460px;
-    z-index: 999;
 }
 
 .map-point {
     position: absolute;
+    z-index: 999;
 
     cursor: pointer;
 }
