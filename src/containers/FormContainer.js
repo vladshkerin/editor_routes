@@ -66,8 +66,9 @@ class FormContainer extends Component {
       evt.preventDefault();
 
       const { content } = this.state;
+      const { onAddPoints } = this.props;
       if (content.trim()) {
-        this.props.onAddPoints({
+        onAddPoints({
           id: getId(),
           content: content,
           coordinateX: getRandomInt(0, 350),

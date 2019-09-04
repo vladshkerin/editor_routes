@@ -37,7 +37,8 @@ class App extends Component {
           onDeletePoints={this.onDeletePointsFormHandler}
           onChangePoints={this.onChangePointsFromHandler}/>
         <MapContainer
-          data={points}/>
+          data={points}
+          onAddPoints={this.onAddPointsFormHandler}/>
       </div>
     );
   }

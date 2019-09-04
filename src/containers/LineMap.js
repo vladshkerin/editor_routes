@@ -29,7 +29,10 @@ class LineMap extends Component {
 
   render() {
     return (
-      <canvas className="map-canvas" ref="canvas" width={460} height={460}/>
+      <canvas className="map-canvas"
+              ref="canvas"
+              width={460}
+              height={460}/>
     );
   }
 }
