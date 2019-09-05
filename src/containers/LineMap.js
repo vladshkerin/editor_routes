@@ -10,6 +10,15 @@ class LineMap extends Component {
     this.updateCanvas();
   }
 
+  render() {
+    return (
+      <canvas className="map-canvas"
+              ref="canvas"
+              width={460}
+              height={460}/>
+    );
+  }
+
   updateCanvas = () => {
     const canvas = this.refs.canvas;
     const ctx = canvas.getContext('2d');
@@ -26,15 +35,6 @@ class LineMap extends Component {
     ctx.strokeStyle = 'gray';
     ctx.stroke();
   };
-
-  render() {
-    return (
-      <canvas className="map-canvas"
-              ref="canvas"
-              width={460}
-              height={460}/>
-    );
-  }
 }
 
 LineMap.propTypes = {

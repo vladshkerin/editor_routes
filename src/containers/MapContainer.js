@@ -3,13 +3,27 @@ import PropTypes from 'prop-types';
 import { YMaps, Map } from 'react-yandex-maps';
 import LineMap from './LineMap';
 import PointMapContainer from './PointMapContainer';
-import { getId } from '../utils/Utils';
+import { getId } from '../utils/utils';
 
 class MapContainer extends Component {
   state = {
     center: [55.75, 37.61],
     zoom: 9,
   };
+
+  render() {
+    return (
+      <section className="map-wrapper" onClick={this.onClickHandler}>
+        <YMaps>
+          <Map className="map"
+               defaultState={this.state}>
+          </Map>
+          {this.renderPointsMap()}
+          {this.renderLinesMap()}
+        </YMaps>
+      </section>
+    );
+  }
 
   onClickHandler = evt => {
     evt.preventDefault();
@@ -55,20 +69,6 @@ class MapContainer extends Component {
 
     return null;
   };
-
-  render() {
-    return (
-      <section className="map-wrapper" onClick={this.onClickHandler}>
-        <YMaps>
-          <Map className="map"
-               defaultState={this.state}>
-          </Map>
-          {this.renderPointsMap()}
-          {this.renderLinesMap()}
-        </YMaps>
-      </section>
-    );
-  }
 }
 
 MapContainer.protoType = {

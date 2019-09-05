@@ -2,13 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class PointFormContainer extends Component {
-  onClickHandler = evt => {
-    evt.preventDefault();
-
-    const { id } = this.props.data;
-    this.props.onDeletePoints(id);
-  };
-
   render() {
     const { content } = this.props.data;
 
@@ -19,6 +12,13 @@ class PointFormContainer extends Component {
       </div>
     );
   }
+
+  onClickHandler = evt => {
+    evt.preventDefault();
+
+    const { id } = this.props.data;
+    this.props.onDeletePoints(id);
+  };
 }
 
 PointFormContainer.propTypes = {

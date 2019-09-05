@@ -1,6 +1,7 @@
 body {
     font-family: sans-serif;
     font-size: 18px;
+    line-height: 1;
 }
 
 .App {
@@ -44,10 +45,14 @@ body {
     display: flex;
     justify-content: space-between;
 
-    margin-bottom: 2px;
+    margin: 0 0 2px;
     padding: 3px;
 
     cursor: pointer;
+}
+
+.point__name {
+    margin: 0;
 }
 
 .point:hover {
